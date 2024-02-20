@@ -4,11 +4,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ProtectedRoute } from "./ProtectedRoutes";
-import { useContext } from "react";
-import { Context } from "./context";
 
 function App() {
-  const {userInfo} = useContext(Context)
   return (
     <>
       <Router>
