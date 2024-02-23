@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import openSocket from "socket.io-client";
-let socket;
+let  socket = openSocket(`${process.env.REACT_APP_API_URL}`);
 
 const Home = () => {
   const [orders, setOrders] = useState([]);
@@ -27,7 +27,7 @@ const Home = () => {
           adminEmail: data.email,
           shopId: data.shopId,
         });
-        socket = openSocket(`${process.env.REACT_APP_API_URL}`);
+       
 
         socket.on("connect", () => {
           socket.emit("join_room", { shopId: data.shopId });
