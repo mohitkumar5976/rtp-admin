@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import openSocket from "socket.io-client";
-let  socket;
+let socket;
 
 const Home = () => {
   const [orders, setOrders] = useState([]);
